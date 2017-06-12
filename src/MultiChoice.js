@@ -9,11 +9,7 @@ class MultiChoice extends Component {
     this.props.onSelect(this.props.index)
   }
 
-  _hover() {
-    this.setState({
-      hovering: this.stat
-    })
-  }
+
   render(){
     return (
       <div className="multi-choice">

@@ -16,6 +16,7 @@ class SelectOption extends Component {
     this.setState({
       active: !this.state.active
     })
+    this.props.onSelect(this.props.index, this.props.option, !this.state.active)
   }
 
   render(){
@@ -30,7 +31,8 @@ class SelectOption extends Component {
           borderRadius: "3px", 
           margin: "10px 10px 10px 0",
           justifyContent: "space-between",
-          cursor: "pointer"
+          cursor: "pointer",
+          fontSize: "20px"
 
         }}
         onClick={this._handleClick}

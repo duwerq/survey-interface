@@ -22,7 +22,6 @@ class MultiChoiceContainer extends Component {
     let options = ['http://via.placeholder.com/350x150', 'http://via.placeholder.com/350x150', 'http://via.placeholder.com/350x150']
     return (
       <div className="multi-choice-container">
-        <div>{this.props.question}</div>
         {options.map((image, i) => {
           console.log("image", image)
           return(
