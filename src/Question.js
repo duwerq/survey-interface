@@ -6,12 +6,11 @@ import  {ProgressBar} from 'react-progressbar.js'
 import Footer from './Footer'
 
 class Question extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
       this.state = {
         active: null,
       }
-    
   } 
 
   render() {
@@ -27,7 +26,7 @@ class Question extends Component {
           <div className="question-body">
             <div className="question-number">
               <div style={{position: "absolute", top: "0px", right: "10px", display: "flex", flexDirection: "row", alignItems: 'center'}}>
-                <span>{this.props.number}</span>
+                <span>{`${this.props.number}.`}</span>
               </div>
             </div>
             <div className="question-container">
@@ -47,6 +46,7 @@ class Question extends Component {
             nextQuestion={this.props.nextQuestion} 
             previousQuestion={this.props.previousQuestion}
             progress={this.props.progress}
+            submitButton={this.props.submitQuestion}
           />
         </div>
       </CSSTransitionGroup>
