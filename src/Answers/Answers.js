@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import { CSSTransitionGroup } from 'react-transition-group'
 
 
 
-class App extends Component {
+class Answers extends Component {
   constructor(props) {
     super(props);
   }
@@ -55,5 +54,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Answers;
 

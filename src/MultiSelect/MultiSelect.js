@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
-import SelectOption from './SelectOption'
+import Option from './Option'
 
 class MultiSelect extends Component {
   constructor(props){
@@ -20,15 +20,13 @@ class MultiSelect extends Component {
     this.props.onSelect(this.state.selected)
   }
 
-
   render() {
-    console.log('this props', this.state.selected)
     return (
       <div className="multi-select-container">
        
         {this.state.selected.map((option, i) => {
           return(
-            <SelectOption active={option.active} option={option.option} index={i} onSelect={this._handleClick}/>
+            <Option active={option.active} option={option.option} index={i} onSelect={this._handleClick}/>
           )  
        })}
           

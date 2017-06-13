@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { CSSTransitionGroup } from 'react-transition-group'
 
 // components 
-import Questions from './Questions'
-import Answers from './Answers'
+import Questions from './Questions/Questions'
+import Answers from './Answers/Answers'
 
 
 class App extends Component {
@@ -27,12 +26,9 @@ class App extends Component {
       three,
       questions
     })
-    console.log('submission', one, two, three)
   }
  
   render() { 
-    console.log('app state', this.state)
-  
     return (
       <div className="app" >
         {!this.state.surveyStart ?

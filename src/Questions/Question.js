@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import { CSSTransitionGroup } from 'react-transition-group'
 import  {ProgressBar} from 'react-progressbar.js'
 
-import Footer from './Footer'
+import Footer from '../Footer'
 
 class Question extends Component {
   constructor(props){

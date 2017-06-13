@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import './style/ionicons.css'
-import './App.css';
+import '../style/ionicons.css'
+import '../App.css';
 
-class SelectOption extends Component {
+class Option extends Component {
   constructor(props){
     super(props);
       this.state = {
@@ -48,4 +47,4 @@ class SelectOption extends Component {
   }
 }
 
-export default SelectOption;
+export default Option;

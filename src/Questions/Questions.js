@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import { CSSTransitionGroup } from 'react-transition-group'
 
 // components 
-import MultiChoice from './MultiChoice'
-import MultiSelect from './MultiSelect'
+import MultiChoice from '../MultiChoice/MultiChoice'
+import MultiSelect from '../MultiSelect/MultiSelect'
 import Question from './Question'
 import Textarea from 'react-textarea-autosize';
-import Footer from './Footer';
-
 
 let multiChoiceOptions = ['https://unsplash.it/200/300', 'https://unsplash.it/150/300', 'https://unsplash.it/200/400']
 let multiSelectOptions = ["Pick Me", "No, Me!", "How about me?"]

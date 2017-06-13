@@ -23,7 +23,6 @@ class Footer extends Component {
         bar.path.setAttribute('stroke', state.color);
       }
     }
-    console.log('footer progress', this.props)
     return (
       <div className="footer">
         <div className="left-footer" />

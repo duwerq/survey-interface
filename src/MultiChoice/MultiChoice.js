@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
-import MultiChoiceOption from './MultiChoiceOption'
+import Option from './Option'
 
 class MultiChoice extends Component {
   constructor(props){
@@ -20,13 +20,11 @@ class MultiChoice extends Component {
   }
 
   render() {
-   console.log("multi choice", this.state)
     return (
       <div className="multi-choice-container">
         {this.props.options.map((image, i) => {
-          console.log("image", image)
           return(
-            <MultiChoiceOption
+            <Option
               imageURL={image} 
               onSelect={() => this._selected(i)}
               key={i}

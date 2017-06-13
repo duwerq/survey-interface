@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import './style/ionicons.css'
-import './App.css';
+import '../style/ionicons.css'
+import '../App.css';
 
-class MultiChoiceOption extends Component {
+class Option extends Component {
 
   _handleClick() {
     this.props.onSelect(this.props.index)
@@ -27,4 +26,4 @@ class MultiChoiceOption extends Component {
   }
 }
 
-export default MultiChoiceOption;
+export default Option;
