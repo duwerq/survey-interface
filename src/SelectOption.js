@@ -4,10 +4,10 @@ import './style/ionicons.css'
 import './App.css';
 
 class SelectOption extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
       this.state = {
-        active: false,
+        active: this.props.active,
       }
     this._handleClick = this._handleClick.bind(this)
   } 
@@ -39,7 +39,7 @@ class SelectOption extends Component {
       >
         <div style={{border: this.state.active ? "3px solid rgba(59,94,84,0.6)" : "none", width: "100%", flexDirection: "row", display: "flex", justifyContent: "space-between"}}>
           <div style={{alignSelf: "center", paddingLeft: "10px"}}>
-          option
+          {this.props.option}
           </div>
           {this.state.active ? <div className="ion-checkmark" style={{alignSelf: "center", marginRight: "10px", color: "rgba(59,94,84,0.6)"}}/> : null}
         </div>

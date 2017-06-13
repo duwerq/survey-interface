@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CSSTransitionGroup } from 'react-transition-group'
+import  {ProgressBar} from 'react-progressbar.js'
 
-import MultiChoice from './MultiChoice'
+import Footer from './Footer'
 
 class Question extends Component {
   constructor(){
@@ -22,24 +23,32 @@ class Question extends Component {
             transitionAppearTimeout={500}
             transitionEnter={false}
             transitionLeave={false}>
-      <div className="question-container">
-      
-          <div className="question-number">
-            <div style={{position: "absolute", top: "0px", right: "10px", display: "flex", flexDirection: "row", alignItems: 'center'}}>
-              <span>{this.props.number}</span>
+        <div className="question-main-container" onScroll={() => console.log('scroll')}>
+          <div className="question-body">
+            <div className="question-number">
+              <div style={{position: "absolute", top: "0px", right: "10px", display: "flex", flexDirection: "row", alignItems: 'center'}}>
+                <span>{this.props.number}</span>
+              </div>
             </div>
+            <div className="question-container">
+              <div className="question">
+                <div className="question-text">
+                {this.props.question}
+                </div>
+                <div className="question-input">
+                {this.props.children}
+                </div>
+              </div>
+            </div>
+            <div style={{display: "flex", flex: 1}}/>
+            
           </div>
-          <div className="question">
-            <div className="question-text">
-            {this.props.question}
-            </div>
-            <div>
-            {this.props.children}
-            </div>
-          </div>
-          <div style={{display: "flex", flex: 1}}/>
-        
-      </div>
+          <Footer 
+            nextQuestion={this.props.nextQuestion} 
+            previousQuestion={this.props.previousQuestion}
+            progress={this.props.progress}
+          />
+        </div>
       </CSSTransitionGroup>
     )
   }

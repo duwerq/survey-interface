@@ -1,31 +1,42 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
-import './style/ionicons.css'
+import React, { Component } from 'react';
 import './App.css';
 
-class MultiChoice extends Component {
+import MultiChoiceOption from './MultiChoiceOption'
 
-  _handleClick() {
-    this.props.onSelect(this.props.index)
+class MultiChoice extends Component {
+  constructor(props){
+    super(props);
+      this.state = {
+        active: this.props.active,
+      }
+    this._selected = this._selected.bind(this);
+  } 
+
+  _selected(index){
+    this.setState({
+      active: index
+    })
+    this.props.onSelect(index)
   }
 
-
-  render(){
+  render() {
+   console.log("multi choice", this.state)
     return (
-      <div className="multi-choice">
-        <div className="container">
-          <div className={"checked " + (this.props.active ? "ion-checkmark-circled" : "")} />
-          <img 
-              src={this.props.imageURL} 
-              className={this.props.active} 
-              alt={`multi-choice-image${this.props.index}`}
-              onClick={this._handleClick.bind(this)}
-            />  
-          
-        </div>
+      <div className="multi-choice-container">
+        {this.props.options.map((image, i) => {
+          console.log("image", image)
+          return(
+            <MultiChoiceOption
+              imageURL={image} 
+              onSelect={() => this._selected(i)}
+              key={i}
+              index={i}
+              active={this.state.active === i ? "highlight" : ""}
+           />
+          )
+        })}
       </div>
-    );
+    )
   }
 }
-
 export default MultiChoice;

@@ -4,10 +4,10 @@ import './App.css';
 import SelectOption from './SelectOption'
 
 class MultiSelect extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
       this.state = {
-        selected: {}
+        selected: this.props.selected.length < 1 ? this.props.options.map((option, i) => {return {option: option, active: false}}) : this.props.selected
       }
     this._handleClick = this._handleClick.bind(this);
   } 
@@ -20,15 +20,20 @@ class MultiSelect extends Component {
     this.props.onSelect(this.state.selected)
   }
 
+
   render() {
-    console.log('this props', this.props, this.state, this.props.selected)
+    console.log('this props', this.state.selected)
     return (
       <div className="multi-select-container">
-        {this.props.options.map((option, i) => {
+       
+        {this.state.selected.map((option, i) => {
           return(
-            <SelectOption option={option} index={i} onSelect={this._handleClick}/>
-          )
-        })}
+            <SelectOption active={option.active} option={option.option} index={i} onSelect={this._handleClick}/>
+          )  
+       })}
+          
+    
+       
       </div>
     )
   }
